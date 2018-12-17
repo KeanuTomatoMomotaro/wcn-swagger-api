@@ -1,0 +1,32 @@
+{
+  "name": "wcn-swagger-api",
+  "version": "1.0.0",
+  "description": "Swagger UI Enabled WCN Backend API",
+  "main": "app.js",
+  "scripts": {
+    "test": "npm run e2e-test; npm run negative-test",
+    "negative-test":"npm run posts-negative-test; npm run comments-negative-test",
+    "e2e-test": "mocha test/e2e.js --timeout 0 --exit",
+    "posts-negative-test": "mocha test/posts-negative.js --timeout 0 --exit",
+    "comments-negative-test": "mocha test/comments-negative.js --timeout 0 --exit",
+    "start": "node app.js"
+  },
+  "author": "Keanu Nurherbyanto",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^3.0.2",
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
+    "dotenv": "^6.2.0",
+    "express": "^4.16.4",
+    "helmet": "^3.15.0",
+    "mysql2": "^1.6.4",
+    "swagger-ui-express": "^4.0.1",
+    "uuid": "^3.3.2"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-http": "^4.2.0",
+    "mocha": "^5.2.0"
+  }
+}

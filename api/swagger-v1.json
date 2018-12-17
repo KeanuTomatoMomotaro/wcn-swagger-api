@@ -1,0 +1,140 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "description": "Swagger definition of WCN route",
+      "version": "1.0.0",
+      "title": "GF Routes",
+      "license": {
+        "name": "Apache 2.0",
+        "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+      }
+    },
+    "host": "localhost:8081",
+    "basePath": "/api/v1",
+    "tags": [
+      {
+        "name": "WCN Routes",
+        "description": "API routes fro WCN backend operations"
+      }
+    ],
+    "schemes": [
+      "http",
+      "https"
+    ],
+    "paths": {
+      "/comments/": {
+        "get": {
+          "tags": [
+            "comments"
+          ],
+          "summary": "Get all comments",
+          "operationId": "getComments",
+          "produces": [
+            "application/json"
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "schema": {
+                "$ref": "#/definitions/GetCommentsResponse"
+              }
+            },
+            "400": {
+              "description": "",
+              "schema": {
+                "$ref": "#/definitions/FailResponse"
+              }
+            }
+          }
+        }
+      },
+      "/posts/": {
+        "get": {
+          "tags": [
+            "posts"
+          ],
+          "summary": "Get all posts",
+          "operationId": "getPosts",
+          "produces": [
+            "application/json"
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "schema": {
+                "$ref": "#/definitions/GetPostsResponse"
+              }
+            },
+            "400": {
+              "description": "",
+              "schema": {
+                "$ref": "#/definitions/FailResponse"
+              }
+            }
+          }
+        }
+      }
+    },
+    "definitions": {
+      "GetCommentsResponse": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string",
+            "example": "success"
+          },
+          "result": {
+            "type": "array",
+            "example": [{
+                "postId": 1,
+                "id" : 1,
+                "name": "Keanu Nurherbyanto",
+                "email": "keanu@gmail.com",
+                "commentContent": "Roast me"
+                },{
+                  "postId": 1,
+                  "id" : 2,
+                  "name": "Aldred Benedict",
+                  "email": "baldred123@gmail.com",
+                  "commentContent": "You are doing a good job Ken!"
+                }
+              ]
+            }
+          }
+        },
+        "GetPostsResponse": {
+          "type": "object",
+          "properties": {
+            "message": {
+              "type": "string",
+              "example": "success"
+            },
+            "result": {
+              "type": "array",
+              "example": [{
+                  "userId": 1,
+                  "id" : 1,
+                  "title": "Nonton Bareng",
+                  "body": "Nonton film horror bareng anak-anak cloud + IT internal"
+                },
+                {
+                  "userId": 1,
+                  "id" : 2,
+                  "title": "Main ke Aeon Cakung",
+                  "body": "Main ke aeon cakung, naik bianglala + ice skating bareng anak-anak cloud + IT internal"
+                }
+                ]
+              }
+            }
+          },
+      "FailResponse": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string",
+            "example": "error message"
+          }
+        }
+      }
+    }
+  }
