@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "test": "npm run e2e-test; npm run negative-test",
-    "negative-test":"npm run posts-negative-test; npm run comments-negative-test",
+    "negative-test": "npm run posts-negative-test; npm run comments-negative-test",
     "e2e-test": "mocha test/e2e.js --timeout 0 --exit",
     "posts-negative-test": "mocha test/posts-negative.js --timeout 0 --exit",
     "comments-negative-test": "mocha test/comments-negative.js --timeout 0 --exit",
@@ -27,6 +27,7 @@
   "devDependencies": {
     "chai": "^4.2.0",
     "chai-http": "^4.2.0",
+    "chai-things": "^0.2.0",
     "mocha": "^5.2.0"
   }
 }

@@ -43,7 +43,7 @@ describe('Wacana Comments Negative Test', () => {
            done();            
     });
 
-    describe('1. Comments', () => {
+    describe('1. Post Comments', () => {
         it('Cannot post new comment if missing post_id parameter', (done) => {
             let comment_content = 'Comment-Content-'+uuidv4();
 

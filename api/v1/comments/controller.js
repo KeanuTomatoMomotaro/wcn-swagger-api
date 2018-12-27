@@ -29,6 +29,30 @@ exports.get = async (req, res) => {
         });
 }
 
+
+exports.getCommentOfPost = async (req, res) => {
+    let postId = req.params.postid;
+
+    mysql.createConnection(connection)
+        .then( (con) => {
+            con.query(`select comments.id, comments.post_id, comments.content, comments.reply_id,
+            comments.created_at, comments.updated_at, users.username from comments 
+            left join users on comments.user_id = users.id where comments.post_id = ? AND comments.deleted_at IS NULL ORDER BY comments.created_at DESC`, postId)
+            .then(([rows, fields]) => {
+                con.end();
+                return res.json({
+                        message: 'Success',
+                        result: rows
+                    });
+            })
+        })
+        .catch((e) =>{
+            return res.status(400).json({
+                message: e.toString()
+            });
+        });
+}
+
 exports.post = async (req, res) => {
     let id = uuidv4();
     let query = `INSERT INTO comments (id, post_id, user_id, content) VALUES (?, ?, ?, ?)`;
