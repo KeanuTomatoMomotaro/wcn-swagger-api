@@ -14,12 +14,13 @@
   "author": "Keanu Nurherbyanto",
   "license": "ISC",
   "dependencies": {
-    "bcrypt": "^3.0.2",
+    "bcrypt": "^https://github.com/kelektiv/node.bcrypt.js.git#master",
     "body-parser": "^1.18.3",
     "cors": "^2.8.5",
     "dotenv": "^6.2.0",
     "express": "^4.16.4",
     "helmet": "^3.15.0",
+    "mongodb": "^3.1.10",
     "mysql2": "^1.6.4",
     "swagger-ui-express": "^4.0.1",
     "uuid": "^3.3.2"
